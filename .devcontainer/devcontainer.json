@@ -1,0 +1,18 @@
+{
+  "name": "dev-env",
+  "dockerComposeFile": "compose.yml",
+  "service": "dev-env",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "ubuntu",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
+
+
