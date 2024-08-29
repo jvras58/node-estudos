@@ -1,41 +1,38 @@
-import Fastify from 'fastify'
-import { prisma } from './lib/prisma'
+import Fastify, { FastifyInstance } from 'fastify';
+import { configServerOption } from './config/serverconfig';
+import { getAllPromptsRoute } from './routes/get-all-prompts';
 
-const isProduction = process.env.NODE_ENV === 'production'
+const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3333;
 
-// documentação: https://fastify.dev/docs/latest/Reference/Logging/#enable-logging
+const startServer = async () => {
+    const serverOptions = await configServerOption();
+    const app: FastifyInstance = Fastify(serverOptions);
 
-const app = Fastify({
-  logger: isProduction
-    ? true
-    : {
-        transport: {
-          target: 'pino-pretty',
-          options: {
-            colorize: true,
-            translateTime: 'HH:MM:ss.l',
-            ignore: 'pid,hostname', 
-          },
-        },
-      }
-})
+    // ----------------------------------
+    //   APP ROUTERS
+    //  ----------------------------------
 
-app.get('/', async () => {
-  return { message: 'welcome to API' }
-})
+    app.register(getAllPromptsRoute);
 
-app.get('/prompts', async () => {
-  const prompts = await prisma.prompt.findMany()
-  return prompts
-})
+    // ----------------------------------
+    //   Start server
+    //  ----------------------------------
 
-;(async () => {
-  try {
-    await app.listen({ port: 3333 })
-    app.log.info('Server running at http://localhost:3333/')
-  } catch (err) {
-    app.log.error(err)
-    process.exit(1)
-  }
-})()
+    app.get('/', async (_request, _reply) => {
+      return { message: 'welcome to API' };
+    });
 
+    try {
+        await app.listen({ port });
+        app.log.info(`Server running at http://localhost:${port}/`);
+    } catch (err) {
+        app.log.error('Error starting server:', err);
+        process.exit(1);
+    }
+};
+
+// ----------------------------------
+//   Entry point
+//  ----------------------------------
+
+startServer();

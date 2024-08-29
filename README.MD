@@ -7,10 +7,10 @@
 ├─📁 .vscode                ->  Definições de ambiente para o VSCode
 ├─📁 docs                   ->  Artefatos para documentação do repo
 ├─📁 Api                    ->  Entrypoint da aplicação
-│ │ ├─ 📁 lib.ts            ->  configurações usadas na api
+│ │ ├─ 📁 config            ->  configurações usadas na api
 │ │    ├─ 🇹 prisma.ts         ->  conexão com o prisma ORM
-
-│ │       ...
+│ │    ├─ 🇹 serverconfig.ts   ->  configurações padrão para o servidor
+│ │         ...
 │ ├─ 🇹 server.ts            ->  Entrypoint server
 │   ...
 ├─📄 .gitignore
