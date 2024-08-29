@@ -9,7 +9,13 @@
       "extensions": [
         "ms-vscode.vscode-typescript-tslint-plugin",
         "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "Gruntfuggly.todo-tree",
+        "oderwat.indent-rainbow",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "GitHub.vscode-pull-request-github",
+        "humao.rest-client"
       ]
     }
   }

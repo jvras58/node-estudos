@@ -9,13 +9,13 @@
 ├─📁 Api                    ->  Entrypoint da aplicação
 │   ├─ server.ts            ->  Init server
 │   ...
-│ 
-│   │       ...
+│
 │   ...
 ├─📄 .gitignore
 ├─📄 Makefile               ->  Automações para o ambiente
 ├─📄 package.json           ->  Definições para o projeto
 ├─📄 README.md
+├─📄 routes.http            -> envia solicitações HTTP e visualiza a resposta diretamente no vscode
 
 ```
 
