@@ -13,11 +13,14 @@
 │ │         ...
 │ ├─ 🇹 server.ts            ->  Entrypoint server
 │   ...
+├─📁 tests                   ->  Testes da aplicação
+│   ├─ 🇹 ....ts             -> test1
+    ├─📄 ezemple.mp3         -> arquivo de exemplo para a rota de post de videos
+    ├─🌐 routes.http         -> envia solicitações HTTP e visualiza a resposta diretamente no vscode
 ├─📄 .gitignore
 ├─📄 Makefile               ->  Automações para o ambiente
 ├─📄 package.json           ->  Definições para o projeto
 ├─📄 README.md
-├─🌐 routes.http            -> envia solicitações HTTP e visualiza a resposta diretamente no vscode
 
 ```
 

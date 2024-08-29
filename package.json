@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@fastify/multipart": "^8.3.0",
     "@prisma/client": "^5.19.0",
     "body-parser": "^1.20.2",
     "config": "^3.3.12",
