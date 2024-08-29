@@ -7,18 +7,9 @@
 ├─📁 .vscode                ->  Definições de ambiente para o VSCode
 ├─📁 docs                   ->  Artefatos para documentação do repo
 ├─📁 Api                    ->  Entrypoint da aplicação
-│   ├─📁 config             ->  Módulo de configuração
-│   │  └─ express.ts        ->  configurações do servidor.
-│   │  └─ default.json      ->   configurações de ambientes.
-│   ├─📁 controllers        ->  Contém todos controladores da api.
-│   │   └─ x.ts  -          ->  xxxxxxxxxxx.
-│   ├─📁 data               ->  mocks
-│   │   └─ x.ts  -          ->  xxxxxxxxxxx.
-│   ├─📁 routes             ->  Rotas da api.
-│   │   └─ x.ts  -          ->  xxxxxxxxxxx.
+│   ├─ server.ts            ->  Init server
 │   ...
 │ 
-│   ├─ server.ts            ->  Entrypoint da aplicação
 │   │       ...
 │   ...
 ├─📄 .gitignore
@@ -57,3 +48,7 @@ E para instacia-lo no VSCODE é recomendado as seguintes configurações:
 Depois da compilação do container o VSCode abrirá o repositório em um ambiente encapsulado e executando diretamente de dentro do container como configurado nas definições do **/.devconainer**.
 
 #### Procedimento para iniciar
+
+```
+$> npm run dev 
+```
