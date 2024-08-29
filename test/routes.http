@@ -21,3 +21,13 @@ Content-Type: image/png
 < ./exemple.mp3
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
 
+###
+
+# @name: create-transcription
+POST http://localhost:3333/videos/08909f9b-541f-4e9a-b827-eec038ededd6/transcription
+Content-Type: application/json
+
+{
+    "prompt": "Redis"
+}
+
