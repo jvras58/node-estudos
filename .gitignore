@@ -26,3 +26,6 @@ Thumbs.db
 *.ntvs*
 *.njsproj
 *.sln
+
+# Arquivos Prisma
+prisma/dev.db

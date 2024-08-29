@@ -1,4 +1,5 @@
 import Fastify from 'fastify'
+import { prisma } from './lib/prisma'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -20,7 +21,12 @@ const app = Fastify({
 })
 
 app.get('/', async () => {
-  return { hello: 'world' }
+  return { message: 'welcome to API' }
+})
+
+app.get('/prompts', async () => {
+  const prompts = await prisma.prompt.findMany()
+  return prompts
 })
 
 ;(async () => {
