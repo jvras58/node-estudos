@@ -1,6 +1,7 @@
 import Fastify, { FastifyInstance } from 'fastify';
 import { configServerOption } from './config/serverconfig';
 import { getAllPromptsRoute } from './routes/get-all-prompts';
+import { uploadVideoRoute } from './routes/upload-video';
 
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3333;
 
@@ -13,13 +14,14 @@ const startServer = async () => {
     //  ----------------------------------
 
     app.register(getAllPromptsRoute);
+    app.register(uploadVideoRoute);
 
     // ----------------------------------
     //   Start server
     //  ----------------------------------
 
     app.get('/', async (_request, _reply) => {
-      return { message: 'welcome to API' };
+        return { message: 'welcome to API' };
     });
 
     try {
