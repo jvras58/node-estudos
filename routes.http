@@ -1,0 +1,7 @@
+# @name: get welcome to API
+GET http://localhost:3333/
+
+###
+
+# @name: get-prompts
+GET http://localhost:3333/prompts

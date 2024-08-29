@@ -7,15 +7,17 @@
 ├─📁 .vscode                ->  Definições de ambiente para o VSCode
 ├─📁 docs                   ->  Artefatos para documentação do repo
 ├─📁 Api                    ->  Entrypoint da aplicação
-│   ├─ server.ts            ->  Init server
-│   ...
-│ 
-│   │       ...
+│ │ ├─ 📁 lib.ts            ->  configurações usadas na api
+│ │    ├─ 🇹 prisma.ts         ->  conexão com o prisma ORM
+
+│ │       ...
+│ ├─ 🇹 server.ts            ->  Entrypoint server
 │   ...
 ├─📄 .gitignore
 ├─📄 Makefile               ->  Automações para o ambiente
 ├─📄 package.json           ->  Definições para o projeto
 ├─📄 README.md
+├─🌐 routes.http            -> envia solicitações HTTP e visualiza a resposta diretamente no vscode
 
 ```
 

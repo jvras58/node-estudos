@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@prisma/client": "^5.19.0",
     "body-parser": "^1.20.2",
     "config": "^3.3.12",
     "fastify": "^4.28.1",
@@ -21,6 +22,7 @@
     "@types/config": "^3.3.4",
     "@types/node": "^22.5.1",
     "pino-pretty": "^11.2.2",
+    "prisma": "^5.19.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.0",
     "typescript": "^5.5.4"
