@@ -10,6 +10,11 @@ GET http://localhost:3333/prompts
 
 ###
 
+# @name: get-api-gemini-status
+GET http://localhost:3333/ping
+
+###
+
 # @name: upload-video
 POST http://localhost:3333/videos
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -20,4 +25,14 @@ Content-Type: image/png
 
 < ./exemple.mp3
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @name: create-transcription
+POST http://localhost:3333/videos/938dad13-ce99-483c-9d00-28d11fbe6786/transcription
+Content-Type: application/json
+
+{
+    "prompt": "Give me a full transcript of this audio file"
+}
 

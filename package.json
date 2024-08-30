@@ -11,12 +11,16 @@
   "description": "",
   "dependencies": {
     "@fastify/multipart": "^8.3.0",
+    "@google/generative-ai": "^0.17.1",
     "@prisma/client": "^5.19.0",
     "body-parser": "^1.20.2",
     "config": "^3.3.12",
+    "dotenv": "^16.4.5",
     "fastify": "^4.28.1",
     "nodemon": "^3.1.4",
-    "save": "^2.9.0"
+    "openai": "^4.57.0",
+    "save": "^2.9.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.5",

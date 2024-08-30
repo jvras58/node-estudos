@@ -2,6 +2,8 @@ import Fastify, { FastifyInstance } from 'fastify';
 import { configServerOption } from './config/serverconfig';
 import { getAllPromptsRoute } from './routes/get-all-prompts';
 import { uploadVideoRoute } from './routes/upload-video';
+import { createTranscriptionRouter } from './routes/create-transcription';
+import { getApiGemaniTestRoute } from './routes/get-api-gemini';
 
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3333;
 
@@ -15,7 +17,8 @@ const startServer = async () => {
 
     app.register(getAllPromptsRoute);
     app.register(uploadVideoRoute);
-
+    app.register(getApiGemaniTestRoute);
+    app.register(createTranscriptionRouter);
     // ----------------------------------
     //   Start server
     //  ----------------------------------
