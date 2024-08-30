@@ -1,7 +1,6 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-
-
+// documentação : https://github.com/google/generative-ai-js
 export const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export const model = genAI.getGenerativeModel({

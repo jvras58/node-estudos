@@ -36,3 +36,15 @@ Content-Type: application/json
     "prompt": "Give me a full transcript of this audio file"
 }
 
+###
+
+# @name: generate-ia-complete
+POST http://localhost:3333/ia/complete
+Content-Type: application/json
+
+{
+    "videoId": "938dad13-ce99-483c-9d00-28d11fbe6786",
+    "template": "Give me a summary of the transcript of the file provided below: '''{transcription}''' ",
+    "temperature": 0.5
+}
+
