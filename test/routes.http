@@ -10,8 +10,8 @@ GET http://localhost:3333/prompts
 
 ###
 
-# @name: get-api-opnai-status
-GET http://localhost:3333/check-connection
+# @name: get-api-gemini-status
+GET http://localhost:3333/ping
 
 ###
 
@@ -29,10 +29,10 @@ Content-Type: image/png
 ###
 
 # @name: create-transcription
-POST http://localhost:3333/videos/49f311c6-3518-48fe-a614-a097781d1be8/transcription
+POST http://localhost:3333/videos/938dad13-ce99-483c-9d00-28d11fbe6786/transcription
 Content-Type: application/json
 
 {
-    "prompt": "Rede Social"
+    "prompt": "Give me a full transcript of this audio file"
 }
 
