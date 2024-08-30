@@ -10,12 +10,19 @@
 │ │ ├─ 📁 config            ->  configurações usadas na api
 │ │    ├─ 🇹 prisma.ts         ->  conexão com o prisma ORM
 │ │    ├─ 🇹 serverconfig.ts   ->  configurações padrão para o servidor
+│ │    ├─ 🇹 gemini.ts         ->  configurações de conexão com o gemini-Api
 │ │         ...
+│ │
+│ │ ├─ 📁 Utils                            ->  Modulo de codigos utils para toda a aplicação
+│ │    ├─ 🇹 readAndEncodeAudio.ts         ->   converte o conteúdo em base64
+│ │    ├─ 🇹 removeTimestamps.ts           ->  expressão regular para encontrar e remover os timestamps
+│ │         ...
+│ │
 │ ├─ 🇹 server.ts            ->  Entrypoint server
 │   ...
 ├─📁 tests                   ->  Testes da aplicação
 │   ├─ 🇹 ....ts             -> test1
-    ├─📄 ezemple.mp3         -> arquivo de exemplo para a rota de post de videos
+    ├─📄 exemple.mp3         -> arquivo de exemplo para a rota de post de videos
     ├─🌐 routes.http         -> envia solicitações HTTP e visualiza a resposta diretamente no vscode
 ├─📄 .gitignore
 ├─📄 Makefile               ->  Automações para o ambiente
