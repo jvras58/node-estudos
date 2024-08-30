@@ -35,12 +35,19 @@ export async function createTranscriptionRouter(app: FastifyInstance) {
             const result = await model.generateContent([prompt, audioPart]);
             const rawText = result.response.text();
 
-            const cleanedText = removeTimestamps(rawText);
+            const responseText = removeTimestamps(rawText);
 
-            console.log('Transcrição:', cleanedText);
+            await prisma.video.update({
+                where: { id: videoId },
+                data: {
+                    transcription: responseText
+                }
+            });
 
-
-            return { cleanedText };
+            return reply.status(201).send({
+                message: 'Transcrição criada com sucesso!',
+                transcription: responseText
+            });
         } catch (error) {
             console.error('Erro na transcrição:', error);
 
