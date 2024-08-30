@@ -54,6 +54,14 @@ Depois da compilação do container o VSCode abrirá o repositório em um ambien
 
 #### Procedimento para iniciar
 
+# Aplique as migrações disponiveis:
+
+```
+$> npx prisma migrate dev
+```
+
+# Inicie o servidor 
+
 ```
 $> npm run dev 
 ```

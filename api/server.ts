@@ -3,6 +3,7 @@ import { configServerOption } from './config/serverconfig';
 import { getAllPromptsRoute } from './routes/get-all-prompts';
 import { uploadVideoRoute } from './routes/upload-video';
 import { createTranscriptionRouter } from './routes/create-transcription';
+import { getApiOpenaiRoute } from './routes/get-api-openai';
 
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3333;
 
@@ -16,9 +17,8 @@ const startServer = async () => {
 
     app.register(getAllPromptsRoute);
     app.register(uploadVideoRoute);
-    //FIXME: error 500 com a openai
+    app.register(getApiOpenaiRoute);
     app.register(createTranscriptionRouter);
-
     // ----------------------------------
     //   Start server
     //  ----------------------------------

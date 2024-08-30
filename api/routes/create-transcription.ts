@@ -2,7 +2,6 @@ import { FastifyInstance } from "fastify";
 import { prisma } from '../config/prisma'
 import {z} from 'zod';
 import { createReadStream } from 'node:fs';
-import { create } from "node:domain";
 import { openai } from "../config/openai";
 
 const paramsSchema = z.object({
@@ -13,8 +12,7 @@ const bodySchema = z.object({
     prompt: z.string()
 });
 
-// FIXME: ESTOU ENFRENTANDO ERRO CONEXÃO RECUSADA 500 (ECONNRESET) 
-// PROVAVELMENTE NÃO ESTOU SABENDO PEGAR A CHAVE DA API DO OPENAI CORRETAMENTE...
+
 export async function createTranscriptionRouter(app: FastifyInstance) {
     app.post('/videos/:videoId/transcription', async (req, reply) => {
         try {
