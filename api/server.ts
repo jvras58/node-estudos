@@ -1,4 +1,5 @@
 import Fastify, { FastifyInstance } from 'fastify';
+import { fastifyCors } from '@fastify/cors';
 import { configServerOption } from './config/serverconfig';
 import { getAllPromptsRoute } from './routes/get-all-prompts';
 import { uploadVideoRoute } from './routes/upload-video';
@@ -13,6 +14,16 @@ const startServer = async () => {
     const app: FastifyInstance = Fastify(serverOptions);
 
     // ----------------------------------
+    //   Cors
+    //  ----------------------------------
+    app.register(fastifyCors, {
+        origin: '*',
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+    });
+
+
+    // ----------------------------------
     //   APP ROUTERS
     //  ----------------------------------
 
@@ -21,6 +32,8 @@ const startServer = async () => {
     app.register(getApiGemaniTestRoute);
     app.register(createTranscriptionRouter);
     app.register(generateCompletionsRoute);
+
+
     // ----------------------------------
     //   Start server
     //  ----------------------------------
