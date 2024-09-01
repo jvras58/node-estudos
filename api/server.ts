@@ -4,6 +4,7 @@ import { getAllPromptsRoute } from './routes/get-all-prompts';
 import { uploadVideoRoute } from './routes/upload-video';
 import { createTranscriptionRouter } from './routes/create-transcription';
 import { getApiGemaniTestRoute } from './routes/get-api-gemini';
+import { generateCompletionsRoute } from './routes/generate-ai-completion';
 
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3333;
 
@@ -19,6 +20,7 @@ const startServer = async () => {
     app.register(uploadVideoRoute);
     app.register(getApiGemaniTestRoute);
     app.register(createTranscriptionRouter);
+    app.register(generateCompletionsRoute);
     // ----------------------------------
     //   Start server
     //  ----------------------------------

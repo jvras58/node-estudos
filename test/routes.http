@@ -29,10 +29,23 @@ Content-Type: image/png
 ###
 
 # @name: create-transcription
-POST http://localhost:3333/videos/938dad13-ce99-483c-9d00-28d11fbe6786/transcription
+POST http://localhost:3333/videos/bfca03cb-4758-49c7-9e8d-b30c92a80086/transcription
 Content-Type: application/json
 
 {
     "prompt": "Give me a full transcript of this audio file"
 }
+
+###
+
+# @name: generate-ia-complete
+POST http://localhost:3333/ia/complete
+Content-Type: application/json
+
+{
+    "videoId": "bfca03cb-4758-49c7-9e8d-b30c92a80086",
+    "template": "Dê-me um resumo sucinto da transcrição do video a seguir: '''{transcription}''' ",
+    "temperature": 0.5
+}
+
 
