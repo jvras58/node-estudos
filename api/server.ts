@@ -9,7 +9,7 @@ import { generateCompletionsRoute } from './routes/generate-ai-completion';
 
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3333;
 
-const startServer = async () => {
+export const buildFastify = async (): Promise<FastifyInstance> => {
     const serverOptions = await configServerOption();
     const app: FastifyInstance = Fastify(serverOptions);
 
@@ -22,25 +22,30 @@ const startServer = async () => {
         allowedHeaders: ['Content-Type', 'Authorization'],
     });
 
-
     // ----------------------------------
     //   APP ROUTERS
     //  ----------------------------------
-
     app.register(getAllPromptsRoute);
     app.register(uploadVideoRoute);
     app.register(getApiGemaniTestRoute);
     app.register(createTranscriptionRouter);
     app.register(generateCompletionsRoute);
 
-
     // ----------------------------------
-    //   Start server
+    //   Default route
     //  ----------------------------------
-
     app.get('/', async (_request, _reply) => {
         return { message: 'welcome to API' };
     });
+
+    return app;
+};
+
+// ----------------------------------
+//   Entry point
+//  ----------------------------------
+const startServer = async () => {
+    const app = await buildFastify();
 
     try {
         await app.listen({ port });
@@ -50,9 +55,5 @@ const startServer = async () => {
         process.exit(1);
     }
 };
-
-// ----------------------------------
-//   Entry point
-//  ----------------------------------
 
 startServer();
